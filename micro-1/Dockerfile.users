@@ -1,0 +1,13 @@
+FROM python:latest
+
+WORKDIR /phamhoan/micro-1
+
+COPY . /phamhoan/micro-1
+
+RUN pip3 install flask
+
+RUN pip install requests
+
+ENV FLASK_APP=app.py
+
+CMD ["flask", "run", "--debug", "--host=0.0.0.0", "--port=5000"]
