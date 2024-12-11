@@ -1,0 +1,8 @@
+docker build -f micro-1/Dockerfile.users -t micro-1 ./micro-1
+docker build -f micro-2/Dockerfile.docs -t micro-2 ./micro-2
+docker build -f micro-3/Dockerfile.search -t micro-3 ./micro-3
+docker build -f micro-4/Dockerfile.logs -t micro-4 ./micro-4
+docker run -d --name micro-1 --net phamhoan -p 9000:5000 micro-1
+docker run -d --name micro-2 --net phamhoan -p 9001:5001 micro-2
+docker run -d --name micro-3 --net phamhoan -p 9002:5002 micro-3
+docker run -d --name micro-4 --net phamhoan -p 9003:5003 micro-4
